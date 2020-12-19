@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&family=Roboto&family=Shadows+Into+Light&display=swap");
+$primary-color: #047aed;
+$secondary-color: #1c3fa8;
+$dark-color: #002240;
+$light-color: #f4f4f4;
+$success-color: #5cb85c;
+$error-color: #d9534f;
+$dark-bg-color: rgb(19, 20, 21);
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background: $dark-bg-color;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  line-height: 1.6;
+}
+
+.showcase {
+  height: 400px;
+  position: relative;
+  h1 {
+    font-size: 40px;
+  }
+  p {
+    margin: 20px 0;
+  }
+}
