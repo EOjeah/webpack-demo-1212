@@ -1,11 +1,12 @@
 import React from 'react';
+import Header from './Header/Header';
+import Content from './Content/Content';
 
-const App = (props) => {
-  
-  return (
-    <div>
-    </div>
-  )
-}
+const App = () => (
+  <>
+    <Header />
+    <Content />
+  </>
+);
 
 export default App;
