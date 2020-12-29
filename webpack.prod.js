@@ -1,30 +1,30 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const { merge } = require('webpack-merge');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const common = require('./webpack.common.js');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = merge(common, {
   mode: 'production',
   optimization: {
     moduleIds: 'deterministic',
-     runtimeChunk: 'single',
-     splitChunks: {
-       cacheGroups: {
-         vendor: {
-           test: /[\\/]node_modules[\\/]/,
-           name: 'vendors',
-           chunks: 'all',
-         },
-       },
-     },
-   },
-   plugins: [
-    ///...
+    runtimeChunk: 'single',
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
+    },
+  },
+  plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].[fullhash].css',
-      chunkFilename: '[id].[fullhash].css'
-    })
+      chunkFilename: '[id].[fullhash].css',
+    }),
   ],
-   module: {
+  module: {
     rules: [
       {
         test: /\.s[ac]ss$/i,
@@ -38,5 +38,5 @@ module.exports = merge(common, {
         ],
       },
     ],
-  }
+  },
 });

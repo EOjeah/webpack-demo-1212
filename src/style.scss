@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&family=Roboto&family=Shadows+Into+Light&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&family=Roboto&family=Shadows+Into+Light&display=swap');
 $primary-color: #047aed;
 $secondary-color: #1c3fa8;
 $dark-color: #002240;
 $light-color: #f4f4f4;
 $success-color: #5cb85c;
 $error-color: #d9534f;
-$dark-bg-color: rgb(19, 20, 21);
+$dark-bg-color: rgb(41, 41, 41);
 
 * {
   box-sizing: border-box;
@@ -15,20 +15,109 @@ $dark-bg-color: rgb(19, 20, 21);
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #fff;
   line-height: 1.6;
 }
 
-.showcase {
-  height: 400px;
-  position: relative;
-  h1 {
-    font-size: 40px;
+a {
+  color: #fff;
+}
+
+h1,
+h2 {
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 10px 0;
+}
+
+p {
+  margin: 10px 0;
+}
+
+img {
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.navbar {
+  // * {
+  //   background: rgb(41, 41, 41);
+  // }
+  // border-bottom: #050505 solid 2px;
+  // box-shadow: 0 0.1px 10px rgb(12, 12, 12);
+  height: 70px;
+  color: #fff;
+  .flex {
+    justify-content: space-between;
   }
-  p {
-    margin: 20px 0;
+  ul {
+    display: flex;
   }
+  a {
+    padding: 10px;
+    margin: 0 5px;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    transform-origin: bottom;
+    // &:hover {
+    //   animation-name: bounce;
+    //   animation-timing-function: linear;
+    //   animation-duration: 2s;
+    //   animation-iteration-count: infinite;
+    //   animation: bounce 2s linear infinite;
+    // }
+  }
+}
+
+.twitter-icon {
+  &:hover {
+    color: #1991da;
+  }
+}
+
+.linkedin-icon {
+  &:hover {
+    color: #0966c2;
+  }
+}
+
+.github-icon {
+  &:hover {
+    color: #4078c0;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.flex {
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .container {
