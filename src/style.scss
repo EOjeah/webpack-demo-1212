@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&family=Roboto&family=Shadows+Into+Light&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&family=Roboto&family=Shadows+Into+Light&display=swap');
 $primary-color: #047aed;
 $secondary-color: #1c3fa8;
 $dark-color: #002240;
@@ -15,7 +15,7 @@ $dark-bg-color: rgb(41, 41, 41);
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #fff;
   line-height: 1.6;
 }
@@ -121,7 +121,7 @@ ul {
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1280px;
   margin: 0 auto;
   overflow: hidden;
   padding: 0 5px;
