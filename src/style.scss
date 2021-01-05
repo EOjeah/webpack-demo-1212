@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&family=Roboto&family=Shadows+Into+Light&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 $primary-color: #047aed;
 $secondary-color: #1c3fa8;
 $dark-color: #002240;
@@ -11,17 +11,40 @@ $dark-bg-color: rgb(41, 41, 41);
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  background: $dark-bg-color;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto Mono", monospace;
   color: #fff;
   line-height: 1.6;
 }
 
 a {
   color: #fff;
+}
+.no-js {
+  background: $dark-bg-color;
+  height: 100vh;
+  width: 100%;
+  // margin: 10px;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  &::before {
+    content: "";
+    background-image: url("./logo.svg");
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 50% auto;
+  }
 }
 
 h1,
@@ -43,12 +66,12 @@ ul {
   list-style-type: none;
 }
 
+.nav-items {
+  // position: relative;
+}
+
 .navbar {
-  // * {
-  //   background: rgb(41, 41, 41);
-  // }
-  // border-bottom: #050505 solid 2px;
-  // box-shadow: 0 0.1px 10px rgb(12, 12, 12);
+  background: $dark-bg-color;
   height: 70px;
   color: #fff;
   .flex {
@@ -63,13 +86,6 @@ ul {
     text-decoration: none;
     transition: color 0.3s ease-in-out;
     transform-origin: bottom;
-    // &:hover {
-    //   animation-name: bounce;
-    //   animation-timing-function: linear;
-    //   animation-duration: 2s;
-    //   animation-iteration-count: infinite;
-    //   animation: bounce 2s linear infinite;
-    // }
   }
 }
 
@@ -79,9 +95,9 @@ ul {
   }
 }
 
-.linkedin-icon {
+.person-icon {
   &:hover {
-    color: #0966c2;
+    color: #666666;
   }
 }
 
@@ -91,29 +107,76 @@ ul {
   }
 }
 
-@keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-3px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+.hero {
+  background: #303030;
+  width: 100vw;
+  height: calc(100vh - 70px);
+  overflow: hidden;
+  // height: 450px;
 }
 
-@-webkit-keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-3px);
-  }
-  100% {
-    transform: translateY(0);
+$breakpoint-tablet: 768px;
+@media (max-width: $breakpoint-tablet) {
+  .logo {
+    h1 {
+      display: none;
+    }
+    &::before {
+      content: "";
+    }
   }
 }
+// $breakpoint-desktop: 1280px;
+// @media (min-width: $breakpoint-desktop) {
+//   .hero {
+//     background: $dark-bg-color;
+//     height: 100vh;
+//     width: 100%;
+//     // margin: 10px;
+//     margin: 0;
+//     padding: 0;
+//     box-sizing: inherit;
+//     padding-top: 95px;
+//     padding-bottom: 85px;
+//     margin-left: auto;
+//     margin-right: auto;
+//     position: relative;
+//     &::before {
+//       content: "";
+//       background-image: url("./drawing.svg");
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//       right: 0;
+//       bottom: 0;
+//       background-repeat: no-repeat;
+//       background-position: 50% 50%;
+//       background-size: 50% auto;
+//     }
+//   }
+// }
+
+.hero--text {
+  font-weight: 500;
+  letter-spacing: 3px;
+  font-size: calc(1vw + 1.5rem);
+  text-align: center;
+  padding: 50px 12px 50px 12px;
+  &--body {
+    @extend .hero--text;
+    font-size: calc(1vw + 1.15rem);
+  }
+  &--title {
+    @extend .hero--text;
+  }
+}
+// .hero-text {
+//   letter-spacing: 3px;
+//   font-size: 1.5rem;
+//   text-align: center;
+//   padding: 50px 12px 50px 12px;
+// }
+
 .flex {
   display: flex;
   align-items: center;
@@ -124,5 +187,21 @@ ul {
   max-width: 1280px;
   margin: 0 auto;
   overflow: hidden;
-  padding: 0 5px;
+  padding: 0 50px;
+}
+
+.logo {
+  font-size: 18px;
+  align-items: center;
+  display: flex;
+  img {
+    width: 48px;
+    transition: opacity 0.3s ease-in-out;
+    &:hover {
+      opacity: 0.3;
+    }
+  }
+  h1 {
+    font-size: 20px;
+  }
 }
